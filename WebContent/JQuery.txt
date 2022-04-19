@@ -1,0 +1,33 @@
+JQuery.txt
+
+-> 자바스크립트의 대표적인 라이브러리 언어(프레임워크)
+=> 선택자, 이벤트 처리, Ajax, JSON
+
+https://jquery.com
+
+Download the compressed, production jQuery 3.6.0
+ => 압축된 파일 (주석X, 줄바꿈, 공백 x)
+Download the uncompressed, development jQuery 3.6.0
+ => 비압축된 파일 (주석O, 줄바꿈, 공백O)
+
+Download the compressed, production jQuery 3.6.0 slim build
+ => 압축된 슬림 파일 파일 (주석X, 줄바꿈, 공백 x, Ajax, 효과 X)
+
+Download the uncompressed, development jQuery 3.6.0 slim build
+ => 비압축된 슬림 파일 (주석O, 줄바꿈, 공백O, Ajax, 효과 X)
+ 
+ 
+ 
+ 
+ 
+ * 절대경로
+ 	- 파일, 웹페이지가 가지고 있는 고유한 경로
+ 	- 시작점에 [ / ]를 사용하여 접근
+ 	
+ 	ex) ~~~~ /WebContent/jq/test1.jsp
+ 	
+ * 상대경로
+ 	- 파일이 위치한 폴더를 기준으로 시작점을 설정한 경로
+ 	- 시작점 [ /(최상위경로),  ./(현재 폴더),  ../(상위 폴더) ]
+ 	
+ 	ex) ../js/jquery.js
