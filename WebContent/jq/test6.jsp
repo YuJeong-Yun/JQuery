@@ -28,7 +28,16 @@
 			return "/ 이름 : " + arr[idx].name + "/ 주소 : " + arr[idx].addr;
 		});
 		
-
+		
+		// each()구문
+		// $(요소).each(function(){});
+		// $.each(요소, function(){});
+		$(arr).each(function(i,e) {
+			$('table').append(function() {
+				return "<tr><td>"+e.name+"</td><td>"+e.addr+"</td></tr>";
+			});
+		});
+		
 		
 	});
 
