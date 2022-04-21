@@ -31,3 +31,43 @@ Download the uncompressed, development jQuery 3.6.0 slim build
  	- 시작점 [ /(최상위경로),  ./(현재 폴더),  ../(상위 폴더) ]
  	
  	ex) ../js/jquery.js
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ * Ajax (Asynchronous JavaScript and XML) : 비동기 방식의 JavaScript와 Xml
+ 
+ 	=> 동기 방식 처리 : 서버 페이지 요청 -> 처리 -> 응답(상태) 페이지 전달(사용가능)
+ 		-> 화면이 깜박거림 (페이지 이동 발생!)
+ 	
+ 	=> 비동기 방식 처리 : 서버 페이지 요청 -> 처리 -> 응답 페이지 전달 (상태여부와 상관없이 사용가능)
+ 		-> 화면 깜박거림 X (페이지 이동 없음!)
+ 		
+ 		
+ 		
+ * Jquery를 사용한 Ajax 처리 방법
+ 
+ 	$.ajax(주소,{옵션,옵션, ...});
+ 	
+ 	// 주소를 { } 안에 넣을수도 있음
+ 	$.ajax({옵션,....});
+ 	$.ajax({
+ 		url : "이동할 페이지",
+ 		type : "전송방식(get/post)",
+ 		data : "url로 전송할 데이터",
+ 		dataType : "요청한 데이터 타입(html, xml, json, text...)",
+ 		success : function(data) {
+ 			페이지 이동이 정상적으로 처리된 경우 실행하는 코드
+ 			data는 요청한 데이터를 의미
+ 		},
+ 		error : function() {
+ 			페이지 이동이 비정상적으로 처리된 경우 실행하는 코드
+ 		}
+ 		
+ 	});
