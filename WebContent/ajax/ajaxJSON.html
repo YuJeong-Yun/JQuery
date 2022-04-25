@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+// 		$.ajax({
+// 			url: "test1.jsp",
+// 			success: function(data) {
+// 				console.log(data);	
+				
+// 				$('body').append(data.name +"/" +data.gender+"/"+data.tel+"<br>");
+// 			}
+// 		}); //ajax
+		
+		
+		//.getJSON();
+		$.getJSON({
+			url:"test1.jsp",
+			success:function(data){
+				$.each(data,function(k,v){
+					$('body').append(k + " : " + v + "<br>");
+				});
+				
+			}
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>ajaxJSON.html</h1>
+</body>
+</html>
