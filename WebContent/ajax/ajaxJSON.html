@@ -15,22 +15,57 @@
 // 			}
 // 		}); //ajax
 		
-		
-		//.getJSON();
-		$.getJSON({
-			url:"test1.jsp",
-			success:function(data){
-				$.each(data,function(k,v){
-					$('body').append(k + " : " + v + "<br>");
-				});
+// 		//.getJSON();
+// 		$.getJSON({
+// 			url:"test1.jsp",
+// 			success:function(data){
+// 				$.each(data,function(k,v){
+// 					$('body').append(k + " : " + v + "<br>");
+// 				});
 				
+// 			}
+// 		}); //getJSON
+		
+				
+		// json 배열처리 -> body에 출력
+		// getJSON 방식
+		$.getJSON({
+			url: "test2.jsp",
+			success: function(data){
+				$.each(data, function(index, item){
+					$('body').append("<hr>");
+					$('body').append(item.name +"/" +item.gender+ "/" +item.tel +"<br>");
+					
+					// 1. 테이블에 추가
+					// $('table').append("<tr><td>"+item.name+"</td><td>"+item.gender+"</td><td>"+item.tel+"</td></tr>");
+					
+					// 2. 변수로 생성해서 테이블에 추가
+					var tag = "<tr>";
+						tag += "<td>"+item.name+"</td>";
+						tag += "<td>"+item.gender+"</td>";
+						tag += "<td>"+item.tel+"</td>";
+						tag += "</tr>";
+						$('table').append(tag);
+
+				});
 			}
-		});
+		}); //ajax
+		
+		
+
 		
 	});
 </script>
 </head>
 <body>
 	<h1>ajaxJSON.html</h1>
+	
+	<table border="1">
+		<tr>
+			<td>이름</td>
+			<td>성별</td>
+			<td>전화번호</td>
+		</tr>
+	</table>
 </body>
 </html>
