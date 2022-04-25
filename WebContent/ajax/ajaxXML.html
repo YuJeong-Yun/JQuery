@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$.ajax({
+			url : "testXML.xml",
+			success : function(data) {
+				// alert("페이지 다녀옴");
+				console.log(data);
+				
+				// find(태그명) - 전달받아온 데이터(xml)에서 특정 태그를 찾는 메서드
+				$(data).find('person').each(function(){
+					// xml 파일에 있는 정보(이름, 성별, 전화번호) 화면에 출력
+					var name = $(this).find('name').text();
+					var gender = $(this).find('gender').text();
+					var tel = $(this).find('tel').text();
+					
+					$('body').append("이름 : "+ name+", 성별 : "+gender+", 전화번호 : "+tel+"<br>");
+				});
+			}
+
+		}); //ajax
+	});
+</script>
+</head>
+<body>
+	<h1>ajaxXML.html</h1>
+
+	<h2>textXML.xml 파일에서 가져온 데이터</h2>
+</body>
+</html>
